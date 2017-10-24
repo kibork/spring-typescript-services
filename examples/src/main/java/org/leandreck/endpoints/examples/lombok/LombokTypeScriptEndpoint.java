@@ -16,22 +16,12 @@
 package org.leandreck.endpoints.examples.lombok;
 
 import org.leandreck.endpoints.annotations.TypeScriptEndpoint;
-import org.leandreck.endpoints.annotations.TypeScriptIgnore;
-import org.leandreck.endpoints.examples.RootType;
-import org.leandreck.endpoints.examples.SubType;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.ByteArrayInputStream;
-import java.util.*;
-
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.http.MediaType.IMAGE_PNG;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 /**

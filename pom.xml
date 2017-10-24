@@ -67,6 +67,7 @@
     <modules>
         <module>annotations</module>
         <module>examples</module>
+        <module>spring-web-api</module>
     </modules>
 
     <dependencyManagement>
@@ -189,6 +190,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <show>public</show>
+                    <excludePackageNames>org.springframework.*</excludePackageNames>
                 </configuration>
                 <executions>
                     <execution>
@@ -228,6 +230,7 @@
                         <!--<exclude>src/test/resources/**</exclude>-->
                         <exclude>src/main/resources/META-INF/services/*.Processor</exclude>
                         <exclude>src/main/resources/versioneye.properties</exclude>
+                        <exclude>src/main/java/org/springframework/**</exclude>
                     </excludes>
                     <mapping>
                         <gstring>JAVADOC_STYLE</gstring>

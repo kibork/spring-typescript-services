@@ -64,9 +64,21 @@ public class EndpointNodeFactory {
     private static String defineName(final TypeElement typeElement, final TypeScriptEndpoint annotation) {
         final String name;
         if (annotation.value().isEmpty()) {
-            name = typeElement.getSimpleName().toString();
+            name = getServiceNameForClass(typeElement);
         } else {
             name = annotation.value();
+        }
+
+        return name;
+    }
+
+    private static String getServiceNameForClass(TypeElement typeElement) {
+        String name;
+        final String className = typeElement.getSimpleName().toString();
+        if (className.endsWith("Impl")) {
+            name = className.substring(0, className.length() - 4);
+        } else {
+            name = className;
         }
         return name;
     }

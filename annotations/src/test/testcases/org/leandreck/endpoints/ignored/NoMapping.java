@@ -16,13 +16,10 @@
 package org.leandreck.endpoints.case1;
 
 import org.leandreck.endpoints.annotations.TypeScriptEndpoint;
-import org.leandreck.endpoints.annotations.TypeScriptIgnore;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @TypeScriptEndpoint(template = "/org/leandreck/endpoints/templates/testing/service.ftl")
 @RestController

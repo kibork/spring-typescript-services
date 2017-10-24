@@ -16,7 +16,6 @@
 package org.leandreck.endpoints.complex;
 
 import org.leandreck.endpoints.annotations.TypeScriptEndpoint;
-import org.leandreck.endpoints.annotations.TypeScriptType;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

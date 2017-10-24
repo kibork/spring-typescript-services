@@ -32,7 +32,6 @@ import javax.lang.model.util.Types;
 
 import org.leandreck.endpoints.annotations.TypeScriptIgnore;
 import org.leandreck.endpoints.processor.config.TemplateConfiguration;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,6 +39,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  */
 class MethodNodeFactory {
+
+    public final static String APPLICATION_JSON_VALUE = "application/json";
+
 
     private final TypeNodeFactory typeNodeFactory;
     private final RequestMappingFactory requestMappingFactory;
@@ -127,7 +129,7 @@ class MethodNodeFactory {
         boolean hasIgnoreAnnotation = methodElement.getAnnotation(TypeScriptIgnore.class) != null;
         boolean hasRequestMappingAnnotation = requestMapping != null;
         boolean producesJson = hasRequestMappingAnnotation && Arrays.stream(requestMapping.produces())
-                .map(value -> value.startsWith(MediaType.APPLICATION_JSON_VALUE))
+                .map(value -> value.startsWith(APPLICATION_JSON_VALUE))
                 .reduce(false, (a, b) -> a || b);
 
         boolean isPublic = methodElement.getModifiers().contains(Modifier.PUBLIC);
