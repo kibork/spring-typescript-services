@@ -81,6 +81,10 @@ class TypeNodeFactory {
 
         //any
         mappings.put("Object", "any");
+
+        //Custom
+        mappings.put("ZonedDateTime", "Date");
+        mappings.put("LocalDateTime", "Date");
     }
 
     private final Types typeUtils;
